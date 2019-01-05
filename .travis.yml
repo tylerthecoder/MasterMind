@@ -10,7 +10,10 @@ install:
 
 script:
   - npm run build
-  - cp index.html bin/index.html
+  - rm -rf dist
+  - mkdir dist
+  - cp -r bin/ dist
+  - cp index.html dist/index.html
 
 deploy:
   provider: s3
@@ -21,4 +24,4 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-  local_dir: bin
+  local_dir: dist
