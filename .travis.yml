@@ -1,0 +1,9 @@
+language: node
+
+deploy:
+  provider: s3
+  access_key_id: "$AWS_KEY"
+  secret_access_key: "$AWS_SECRET"
+  bucket: "tgt101.com"
+  upload-dir: MasterMind
+  skip_cleanup: true
