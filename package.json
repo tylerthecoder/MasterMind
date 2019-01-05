@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "google-chrome index.html",
-    "start:dev": "yarn install && webpack"
+    "start:dev": "yarn install && webpack --watch",
+    "build": "webpack"
   },
   "author": "Tyler Tracy",
   "license": "ISC",
