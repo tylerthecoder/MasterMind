@@ -1,3 +1,6 @@
+sudo: required
+dist: trusty
+
 language: node_js
 node_js:
   - "10"
@@ -7,14 +10,15 @@ install:
 
 script:
   - npm run build
+  - cp index.html bin/index.html
 
 deploy:
-  - provider: s3
-    access_key_id: "$AWS_KEY"
-    secret_access_key: "$AWS_SECRET"
-    bucket: "tgt101.com"
-    upload-dir: MasterMind
-    skip_cleanup: true
-    on:
-      branch: master
-    local_dir: dist
+  provider: s3
+  access_key_id: "$AWS_KEY"
+  secret_access_key: "$AWS_SECRET"
+  bucket: "tgt101.com"
+  upload-dir: MasterMind
+  skip_cleanup: true
+  on:
+    branch: master
+  local_dir: dist
