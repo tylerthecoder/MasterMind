@@ -8,6 +8,7 @@ class Game {
   public controller: Controller;
 
   constructor() {
+    console.log("Test");
     this.view = new View();
     this.model = new Model(this.view);
     this.controller = new Controller(this.model, this.view);
